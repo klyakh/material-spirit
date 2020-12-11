@@ -1,0 +1,10 @@
+# macOS filesystem
+.DS_Store
+
+# Editors and IDEs
+.vscode
+
+# Generated files
+node_modules
+
+# Build output
