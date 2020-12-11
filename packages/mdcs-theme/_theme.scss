@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use 'sass:string';
+@use '@material/theme';
+@use '@material/theme/theme-color';
+@use '@material/theme/custom-properties';
+
+@mixin core-styles() {
+  @include emphasis-colors;
+}
+
+@mixin emphasis-colors() {
+  @each $theme-color in map.keys(theme-color.$property-values) {
+    @if string.slice($theme-color, 1, 5) != 'text-'
+      and $theme-color != 'background'
+      and $theme-color != 'surface'
+      and $theme-color != 'error'
+      and $theme-color != 'on-error' {
+      @each $emphasis in map.keys(theme-color.$text-emphasis) {
+        .mdc-theme--#{$theme-color}-#{$emphasis} {
+          color: rgba(map.get(theme-color.$property-values, $theme-color), theme.text-emphasis($emphasis)) !important;
+        }
+      }
+    }
+  }
+}

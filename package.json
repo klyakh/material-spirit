@@ -1,0 +1,19 @@
+{
+  "name": "material-spirit",
+  "version": "0.1.0",
+  "description": "Material Design Frontend Framework",
+  "repository": "https://github.com/klyakh/material-spirit",
+  "author": "Konstantin Lyakh <kostya.lyakh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": ""
+  },
+  "dependencies": {
+    "material-components-web": "^8.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "sass": "^1.30.0"
+  }
+}
