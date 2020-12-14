@@ -1,5 +1,5 @@
 <p align="center">
-    [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+    <a href="https://lerna.js.org/"><img alt="lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg"></a>
 </p>
 
 # Material Spirit
