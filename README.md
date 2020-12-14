@@ -1,3 +1,7 @@
+<p align="center">
+    [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+</p>
+
 # Material Spirit
 
 Material Spirit is a frontend framework based on Google's [Material Components for web (MDC-Web)](https://material.io/develop/web).
@@ -20,12 +24,15 @@ Material Spirit is a frontend framework based on Google's [Material Components f
 
 ## Как использовать
 
-Можно использовать утилитные классы.
-Можно определять свои контекстные/семантические классы, а в них использовать утилитные mixins.
+Можно использовать утилитные классы. Но тогда будет использоваться или default-тема, или нужно компилировать свою версию библиотеки с цветами своей темы.
+
+Можно подключить в приложение SCSS библиотеки и задать цвета своей темы. По сути это почти тоже самое что компиляция собственное версии библиотеки.
+
+Можно определять свои контекстные/семантические классы, а в них использовать утилитные mixins. Тогда тоже будут использоваться цвета вашей темы, если все правильно настроено.
 
 
 ## Концепции и вдохновение
 * В первую очередь сам MDC-Web. Поэтому:
-** BEM - (найти ссылку)
-** Framework разбит на отдельные независимые пакеты, которые вполне можно использовать по отдельности. Так же есть main package. It simply wraps all of its sibling packages up into one comprehensive library for convenience.
+  * BEM - (найти ссылку)
+  * Framework разбит на отдельные независимые пакеты, которые вполне можно использовать по отдельности. Так же есть main package. It simply wraps all of its sibling packages up into one comprehensive library for convenience.
 * Bootstrap - как самый популярный frontend framework. Это так же ускорит освоение этого framework.

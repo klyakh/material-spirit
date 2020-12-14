@@ -1,0 +1,15 @@
+{
+  "name": "@material-spirit/spirit-theme",
+  "description": "Material Spirit extensions for @material/theme package",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klyakh/material-spirit.git",
+    "directory": "packages/mdcs-theme"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@material/theme": "^8.0.0"
+  }
+}
