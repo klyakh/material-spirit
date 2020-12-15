@@ -1,5 +1,5 @@
 {
-  "name": "@material-spirit/material-spirit",
+  "name": "material-spirit",
   "description": "Material Design frontend framework based on MDC Web",
   "version": "0.1.0",
   "license": "MIT",
@@ -10,6 +10,6 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@material-spirit/spirit-theme": "^0.1.0"
+    "@material-spirit/spirit-theme": "link:../mdcs-theme"
   }
 }

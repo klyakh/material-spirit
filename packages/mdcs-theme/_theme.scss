@@ -9,17 +9,24 @@
 }
 
 @mixin emphasis-colors() {
-  @each $theme-color in map.keys(theme-color.$property-values) {
-    @if string.slice($theme-color, 1, 5) != 'text-'
-      and $theme-color != 'background'
-      and $theme-color != 'surface'
-      and $theme-color != 'error'
-      and $theme-color != 'on-error' {
+  @each $color-style in map.keys(theme-color.$property-values) {
+    @if string.slice($color-style, 1, 5) != 'text-'
+      and $color-style != 'background'
+      and $color-style != 'surface'
+      and $color-style != 'error'
+      and $color-style != 'on-error' {
       @each $emphasis in map.keys(theme-color.$text-emphasis) {
-        .mdc-theme--#{$theme-color}-#{$emphasis} {
-          color: rgba(map.get(theme-color.$property-values, $theme-color), theme.text-emphasis($emphasis)) !important;
+        .mdc-theme--#{$color-style}-#{$emphasis} {
+          @include emphasized-color($color-style, $emphasis);
         }
       }
     }
   }
+}
+
+/*
+  $color-style - primary, secondary, on-primary, etc.
+*/
+@mixin emphasized-color($color-style, $emphasis) {
+  color: rgba(map.get(theme-color.$property-values, $color-style), theme.text-emphasis($emphasis)) !important;
 }
