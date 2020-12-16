@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use '@material/layout-grid';
+
+$display-values: none, inline, inline-block, block, grid, table, table-cell, table-row, flex, inline-flex;
+
+@mixin core-styles() {
+  @each $display in $display-values {
+    .mdcs-display--#{$display} {
+      display: $display;
+    }
+  }
+  
+  @each $breakpoint in map.keys(layout-grid.$breakpoints) {
+    @include layout-grid.media-query_($breakpoint) {
+      @each $display in $display-values {
+        .mdcs-display--#{$display}-#{$breakpoint} {
+          display: $display;
+        }
+      }
+    }
+  }
+}

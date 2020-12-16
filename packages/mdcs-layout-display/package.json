@@ -1,0 +1,15 @@
+{
+  "name": "@material-spirit/spirit-layout-display",
+  "description": "Material Spirit utils to toggle display value",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klyakh/material-spirit.git",
+    "directory": "packages/mdcs-layout-display"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@material/layout-grid": "^8.0.0"
+  }
+}
