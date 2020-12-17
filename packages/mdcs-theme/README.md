@@ -21,4 +21,4 @@
 
 CSS Class | Description
 --- | ---
-`mdc-theme--<COLOR_STYLE>-<EMPHASIS>` | COLOR_STYLE: primary, on-primary, secondary, on-secondary, on-surface.<br>EMPHASIS: high, medium, disabled.
+`mdcs-theme--<COLOR_STYLE>-<EMPHASIS>` | COLOR_STYLE: primary, on-primary, secondary, on-secondary, on-surface.<br>EMPHASIS: high, medium, disabled.
