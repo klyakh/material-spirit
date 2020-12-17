@@ -1,7 +1,7 @@
 Аналог в Bootsrap - https://getbootstrap.com/docs/5.0/utilities/colors/
 
-Классы поддерживают theming via CSS variables - https://material.io/develop/web/docs/theming, Step 4.
 
+Классы не поддерживают [theming via CSS variables](https://material.io/develop/web/docs/theming). Emphasis реализуется через применение rgba на target color и указанием уровня прозрачности. rgba принимает цвет в виде 3-х параметров. А CSS variable для цветов принимают значение в виде hex или color alias. Поэтому нет возможности использовать значение CSS variables в rgba.
 
 В MDC есть несколько классов, которые позволяют задать theme-colors (https://material.io/develop/web/docs/theming):
 * mdc-theme--primary
