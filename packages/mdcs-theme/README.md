@@ -17,24 +17,8 @@
 Но не хватает on-* с различными emphasis. В Bootstrap есть text-muted.
 
 
+### CSS Classes
 
-
-.color-on-primary--high
-.color-on-primary--medium
-.color-on-primary--disabled
-
-
-.text-on-primary--high
-.text-on-primary--medium
-.text-on-primary--disabled
-
-
-.mdcs-color__on-primary
-.mdcs-color__on-primary--high
-.mdcs-color__on-primary--medium
-.mdcs-color__on-primary--disabled
-
-
-.text-on-secondary--medium
-.text-on-surface
-.text-on-error
+CSS Class | Description
+--- | ---
+`mdc-theme--<COLOR_STYLE>-<EMPHASIS>` | COLOR_STYLE: primary, on-primary, secondary, on-secondary, on-surface.<br>EMPHASIS: high, medium, disabled.
