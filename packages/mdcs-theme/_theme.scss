@@ -16,7 +16,7 @@
       and $color-style != 'error'
       and $color-style != 'on-error' {
       @each $emphasis in map.keys(theme-color.$text-emphasis) {
-        .mdc-theme--#{$color-style}-#{$emphasis} {
+        .mdcs-theme--#{$color-style}-#{$emphasis} {
           @include emphasized-color($color-style, $emphasis);
         }
       }
