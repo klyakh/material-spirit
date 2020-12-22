@@ -11,6 +11,7 @@
   "sideEffects": false,
   "dependencies": {
     "@material-spirit/spirit-theme": "^0.1.0",
-    "@material-spirit/spirit-layout-display": "^0.1.0"
+    "@material-spirit/spirit-layout-utils": "^0.1.0",
+    "@material-spirit/spirit-border": "^0.1.0"
   }
 }

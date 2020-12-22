@@ -1,0 +1,86 @@
+
+@use 'sass:map';
+@use '@material/layout-grid';
+
+$spacing-step: 8px;
+$spacing-steps: 5 !default;
+
+$spacing-types: (
+  padding: p,
+  margin: m
+);
+
+$spacing-side-values: (
+  top: t,
+  bottom: b,
+  left: l,
+  right: r
+);
+
+$spacing-axis-values: (
+  x: (left, right),
+  y: (top, bottom)
+);
+
+@mixin spacing-styles($breakpoint: null) {
+  @include all-sides-spacing-styles(padding, $breakpoint);
+  @include one-side-spacing-styles(padding, $breakpoint);
+  @include axis-spacing-styles(padding, $breakpoint);
+  @include all-sides-spacing-styles(margin, $breakpoint);
+  @include one-side-spacing-styles(margin, $breakpoint);
+  @include axis-spacing-styles(margin, $breakpoint);
+}
+
+/// @param { String } $spacing-type Either padding or margin
+@mixin all-sides-spacing-styles($spacing-type, $breakpoint: null) {
+  @for $step from 0 through $spacing-steps {
+
+    @if($breakpoint) {
+      .mdcs-spacing--#{ map.get($spacing-types, $spacing-type)}-#{$step}-#{$breakpoint} {
+        #{$spacing-type}: $spacing-step * $step !important;
+      }
+    } @else {
+      .mdcs-spacing--#{ map.get($spacing-types, $spacing-type)}-#{$step} {
+        #{$spacing-type}: $spacing-step * $step !important;
+      }
+    }
+  }
+}
+
+@mixin one-side-spacing-styles($spacing-type, $breakpoint: null) {
+  @each $spacing-side in map.keys($spacing-side-values) {
+    @for $step from 0 through $spacing-steps {
+
+      @if($breakpoint) {
+        .mdcs-spacing--#{ map.get($spacing-types, $spacing-type)}#{ map.get($spacing-side-values, $spacing-side) }-#{$step}-#{$breakpoint} {
+          #{$spacing-type}-#{$spacing-side}: $spacing-step * $step !important;
+        }
+      } @else {
+        .mdcs-spacing--#{ map.get($spacing-types, $spacing-type)}#{ map.get($spacing-side-values, $spacing-side) }-#{$step} {
+          #{$spacing-type}-#{$spacing-side}: $spacing-step * $step !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin axis-spacing-styles($spacing-type, $breakpoint: null) {
+  @each $spacing-axis in map.keys($spacing-axis-values) {
+    @for $step from 0 through $spacing-steps {
+
+      @if($breakpoint) {
+        .mdcs-spacing--#{ map.get($spacing-types, $spacing-type) }#{ $spacing-axis }-#{$step}-#{$breakpoint} {
+          @each $css-property in map.get($spacing-axis-values, $spacing-axis) {
+            #{$spacing-type}-#{$css-property}: $spacing-step * $step !important;
+          }
+        }
+      } @else {
+        .mdcs-spacing--#{ map.get($spacing-types, $spacing-type) }#{ $spacing-axis }-#{$step} {
+          @each $css-property in map.get($spacing-axis-values, $spacing-axis) {
+            #{$spacing-type}-#{$css-property}: $spacing-step * $step !important;
+          }
+        }
+      }
+    }
+  }
+}

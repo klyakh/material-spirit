@@ -1,12 +1,12 @@
 {
-  "name": "@material-spirit/spirit-layout-display",
-  "description": "Material Spirit utils to toggle display value",
+  "name": "@material-spirit/spirit-layout-utils",
+  "description": "Material Spirit layout utils",
   "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/klyakh/material-spirit.git",
-    "directory": "packages/mdcs-layout-display"
+    "directory": "packages/mdcs-layout-utils"
   },
   "sideEffects": false,
   "dependencies": {

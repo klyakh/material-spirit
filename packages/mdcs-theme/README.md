@@ -16,6 +16,10 @@
 
 Но не хватает on-* с различными emphasis. В Bootstrap есть text-muted.
 
+### Дополнительные css variables с rgb-вариантами theme colors.
+
+Добавить дополнительные css variables, которые будут содержать цвета темы в rgb-формате.
+
 
 ### CSS Classes
 

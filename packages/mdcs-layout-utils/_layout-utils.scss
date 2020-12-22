@@ -1,0 +1,66 @@
+@use 'sass:map';
+@use '@material/layout-grid';
+@use './spacing';
+
+$display-values: none, inline, inline-block, block, grid, table, table-cell, table-row, flex, inline-flex;
+$align-items-values: start, end, center, baseline, stretch;
+
+@mixin core-styles {
+  /* display */
+  @each $display in $display-values {
+    .mdcs-display--#{$display} {
+      display: $display;
+    }
+  }
+  
+  @each $breakpoint in map.keys(layout-grid.$breakpoints) {
+    @include layout-grid.media-query_($breakpoint) {
+      @each $display in $display-values {
+        .mdcs-display--#{$display}-#{$breakpoint} {
+          display: $display;
+        }
+      }
+    }
+  }
+
+  /* align-items */
+  @each $align-items in $align-items-values {
+    .mdcs-align-items--#{$align-items} {
+      align-items: $align-items;
+    }
+  }
+
+  @each $breakpoint in map.keys(layout-grid.$breakpoints) {
+    @include layout-grid.media-query_($breakpoint) {
+      @each $align-items in $align-items-values {
+        .mdcs-align-items--#{$align-items}-#{$breakpoint} {
+          align-items: $align-items;
+        }
+      }
+    }
+  }
+
+  /* Flex */
+  .mdcs-flex-grow-1 {
+    flex-grow: 1;
+  }
+
+  @each $breakpoint in map.keys(layout-grid.$breakpoints) {
+    @include layout-grid.media-query_($breakpoint) {
+      .mdcs-flex-grow-1--#{$breakpoint} {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  /* Spacing */
+  @include spacing.spacing-styles;
+
+  /* Breakpoints */
+  @each $breakpoint in map.keys(layout-grid.$breakpoints) {
+    @include layout-grid.media-query_($breakpoint) {
+      /* Spacing for breakpoints */
+      @include spacing.spacing-styles($breakpoint);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@material-spirit/spirit-border",
+  "description": "Material Spirit border utils",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klyakh/material-spirit.git",
+    "directory": "packages/mdcs-border"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@material/layout-grid": "^8.0.0",
+    "@material/data-table": "^8.0.0"
+  }
+}
